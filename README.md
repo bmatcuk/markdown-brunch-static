@@ -43,6 +43,7 @@ exports.config =
 
 Most options passed to marked-brunch-static are passed, verbatim, to [marked](https://github.com/chjj/marked), with the exception of:
 
-* **fileMatch** _(default: /\.static\.(?:markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text)$/)_
+* **fileMatch** _(default: `/\.static\.(?:markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text)$/`)_
+
   > _fileMatch_ is an [anymatch](https://github.com/es128/anymatch) that is used to determine which files will be handled by this processor. As an anymatch, it may be a string with globs, a regex, or a function that takes a filename and returns true if it should be handled, or false otherwise. The default will match files that end in `.static.markdown`, `.static.md`, etc.
 
