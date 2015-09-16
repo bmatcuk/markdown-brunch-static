@@ -1,3 +1,5 @@
+![Release](https://img.shields.io/npm/v/marked-brunch-static.svg)
+
 # marked-brunch-static
 Compile static markdown files with brunch.
 
