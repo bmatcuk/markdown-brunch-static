@@ -7,6 +7,9 @@ class MarkedBrunchStatic
     if @config?.fileMatch
       @handles = @config.fileMatch
       delete @config.fileMatch
+    if @config?.fileTransform
+      @transformPath = @config.fileTransform
+      delete @config.fileTransform
 
   handles: /\.static\.(?:markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text)$/
 
@@ -19,6 +22,9 @@ class MarkedBrunchStatic
       if err
         callback err
         return
+
+      # we need to fix some html-escaping that breaks handlebars
+      content = content.replace(/\{\{&gt;/g, '{{>')
       callback null, content
 
 module.exports = (config) -> new MarkedBrunchStatic config
