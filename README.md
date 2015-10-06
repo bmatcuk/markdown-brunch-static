@@ -36,6 +36,7 @@ exports.config =
           processors: [
             require('marked-brunch-static') {
               fileMatch: ...
+              fileTransform: ((filename) -> ...)
               ...
             }
           ]
@@ -48,4 +49,8 @@ Most options passed to marked-brunch-static are passed, verbatim, to [marked](ht
 * **fileMatch** _(default: `/\.static\.(?:markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text)$/`)_
 
   > _fileMatch_ is an [anymatch](https://github.com/es128/anymatch) that is used to determine which files will be handled by this processor. As an anymatch, it may be a string with globs, a regex, or a function that takes a filename and returns true if it should be handled, or false otherwise. The default will match files that end in `.static.markdown`, `.static.md`, etc.
+
+* **fileTransform** _(default: `(filename) -> filename.replace(/\.static\.\w+$/, '.html')`)_
+
+  > _fileTransform_ converts the input filename into an html filename. It takes a filename as input and returns the new filename with the html extension. If you set the _fileMatch_ property above, you'll probably need to set this option as well to ensure that your output files end with the html extension.
 
