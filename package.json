@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "lodash.merge": "^4.6.1",
-    "marked": "^0.8.2"
+    "marked": "^4.0.10"
   },
   "devDependencies": {
     "brunch": "~2.10.17",
